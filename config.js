@@ -44,33 +44,47 @@ module.exports = {
     'wget --enable-iri'
   ],
   cask: [
-    //'adium',
-    //'amazon-cloud-drive',
-    //'atom',
-    // 'box-sync',
-    //'comicbooklover',
-    //'diffmerge',
-    'docker', // docker for mac
-    //'dropbox',
-    //'evernote',
-    'flux',
-    'gpg-suite',
-    //'ireadfast',
-    'iterm2',
-    'little-snitch',
-    'macbreakz',
-    'micro-snitch',
-    'signal',
-    //'macvim',
-    'sizeup',
-    //'sketchup',
+    // chat
     'slack',
-    'the-unarchiver',
-    //'torbrowser',
-    //'transmission',
+    'zoomus',
+    // window pane management
+    'divvy',
+    //'sizeup',
+    // screenshot taker
+    'skitch',
+    // text editor/terminal
     'visual-studio-code',
-    //'vlc',
-    'xquartz'
+    'sublime-text',
+    'iterm2',
+    // grammar checker
+    'grammarly',
+    // password management
+    'dashlane',
+    '1password',
+    // os management
+    'docker', // docker for mac
+    // screen light management
+    'flux',
+    // mac management
+    'appcleaner',
+    'cleanmymac',
+    // vpn --
+    'nordvpn',
+    'gpg-suite',
+    // health: promotes healthy computer use
+    'macbreakz',
+    // utilities
+    //'micro-snitch',
+    //'little-snitch',
+    'the-unarchiver',
+    'xquartz',
+    // music
+    'spotify',
+    // database management
+    'dbeaver-community',
+    // browsers
+    'google-chrome',
+    'firefox'
   ],
   gem: [
   ],
