@@ -54,3 +54,5 @@ unsetopt correct
 
 # run fortune on new terminal :)
 # fortune
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Must Have
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
 " syntax on " syntax highlighting on
 syntax enable
@@ -38,6 +38,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'junegunn/vim-easy-align'
 " visual undo list
 Plugin 'sjl/gundo.vim'
 " Plugin 'majutsushi/tagbar'
@@ -50,7 +51,7 @@ Plugin 'millermedeiros/vim-esformatter'
 Plugin 'digitaltoad/vim-pug'
 " Plugin 'elzr/vim-json'
 " Plugin 'SirVer/ultisnips'
-"Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'
 " plugins from http://vim-scripts.org/vim/scripts.html
 Plugin 'node.js'
 Plugin 'SuperTab'
@@ -64,10 +65,31 @@ Plugin 'SuperTab'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
+
 " TypeScript
 Plugin 'leafgarland/typescript-vim'
+
 " Vue.js
 Plugin 'posva/vim-vue'
+
+" Linter package
+Plugin 'w0rp/ale'
+
+" Window Swap
+Plugin 'wesQ3/vim-windowswap'
+
+" Keyword completion
+Plugin 'shougo/deoplete.nvim'
+
+" Icons
+Plugin 'ryanoasis/vim-devicons'
+
+" Tmux line
+Plugin 'edkolev/tmuxline.vim'
+
+" Fuzzy search
+set rtp+=~/.fzf
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,6 +153,7 @@ set report=0 " tell us when anything is changed via :...
 set noerrorbells " don't make noise
 set list " we do what to show tabs, to ensure we get them out of my files
 set listchars=tab:>-,trail:- " show tabs and trailing whitespace
+set rnu " relative numbering
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Cues
@@ -151,9 +174,9 @@ set laststatus=2 " always show the status line
 set ai " autoindent (filetype indenting instead)
 set nosi " smartindent (filetype indenting instead)
 set cindent " do c-style indenting
-set softtabstop=4 " unify
-set shiftwidth=4 " unify
-set tabstop=4 " real tabs should be 4, but they will show with set list on
+set softtabstop=2 " unify
+set shiftwidth=2 " unify
+set tabstop=2 " real tabs should be 4, but they will show with set list on
 set copyindent " but above all -- follow the conventions laid before us
 " wrap lines at 120 chars. 80 is somewhat antiquated with nowadays displays.
 set textwidth=120
@@ -227,6 +250,7 @@ endfunction
 " map <F2> <ESC>ggVG:call SuperRetab()<left>
 " map <F12> ggVGg? " apply rot13 for people snooping over shoulder, good fun
 :imap jj <Esc>
+let g:mapleader = ','
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Useful abbrevs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -301,6 +325,31 @@ let g:syntastic_enable_tslint_checker = 1
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntastic_enable_pug_checker = 1
 let g:syntastic_pug_checkers = ['jade','pug']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Easy Align
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+xmap ga <Plug> (EasyAlign)
+nmap ga <Plug> (EasyAlign)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quickly Edit/Reload Vim Config File
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>ev :e $MYVIMRC<CR>
+nnoremap <Leader>sv :so $MYVIMRC<CR>
+
+if has ('autocmd') " Remain compatible with earlier versions
+ augroup vimrc     " Source vim configuration upon save
+    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+  augroup END
+endif " has autocmd
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy search (FZF)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <Leader>f :FZF <cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
