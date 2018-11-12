@@ -30,8 +30,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
@@ -81,15 +79,18 @@ Plugin 'wesQ3/vim-windowswap'
 " Keyword completion
 Plugin 'shougo/deoplete.nvim'
 
-" Icons
-Plugin 'ryanoasis/vim-devicons'
-
 " Tmux line
 Plugin 'edkolev/tmuxline.vim'
 
 " Fuzzy search
 set rtp+=~/.fzf
 Plugin 'junegunn/fzf.vim'
+
+" Smooth scrolling
+Plugin 'terryma/vim-smooth-scroll'
+
+" NerdTree Icons
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -348,7 +349,55 @@ endif " has autocmd
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy search (FZF)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <Leader>f :FZF <cr>
+noremap <Leader>/ :FZF <cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text Search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <Leader>ag :Ag<space>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Smooth Scrolling
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Close All Buffers But Current
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CloseAllBuffersButCurrent()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+
+  if curr > 1    | silent! execute "1,".(curr-1)."bd"     | endif
+  if curr < last | silent! execute (curr+1).",".last."bd" | endif
+endfunction
+nmap <Leader>bd :call CloseAllBuffersButCurrent()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Refresh changed content
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup refresh
+  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
+  autocmd FileChangedShellPost *
+        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Looping through buffers
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Jump to end of pasted text
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
