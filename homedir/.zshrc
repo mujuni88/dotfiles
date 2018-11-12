@@ -59,3 +59,9 @@ unsetopt correct
 
 # load rbenv automatically
 eval "$(rbenv init -)"
+
+############################################
+# Export Paths
+############################################
+export PATH=$HOME/bin:$PATH
+
