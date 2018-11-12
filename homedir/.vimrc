@@ -27,9 +27,18 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nerd Tree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'tpope/vim-sensible'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
@@ -400,7 +409,27 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+let g:airline_theme='bubblegum'
+let g:airline#extensions#tabline#enabled = 1
+let g:lightline = {
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ }
+      \ }
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
-let g:airline_theme='bubblegum'
