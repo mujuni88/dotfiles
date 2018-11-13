@@ -433,7 +433,7 @@ endfunction
 " Persistent undo
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
-set undodir=$HOME/.vim/vimundo/
+set undodir=$HOME/.vim/undo/
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
