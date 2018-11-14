@@ -91,6 +91,9 @@ Plugin 'shougo/deoplete.nvim'
 " Tmux line
 Plugin 'edkolev/tmuxline.vim'
 
+" Tmux navigator
+Plugin 'christoomey/vim-tmux-navigator'
+
 " Fuzzy search
 set rtp+=~/.fzf
 Plugin 'junegunn/fzf.vim'

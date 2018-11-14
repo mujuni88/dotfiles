@@ -37,6 +37,7 @@ id_rsa
 *.un~
 Session.vim
 .netrwhist
+.vim/undo
 *~
 
 #########
