@@ -4,10 +4,11 @@ export ZSH_THEME="powerlevel9k/powerlevel9k"
 
 ## POWERLEVEL9K Settings ##
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir node_version vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv node_version vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history battery time)
 POWERLEVEL9K_TIME_FORMAT="%t %D{%d/%m/%Y}"
 POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'
+POWERLEVEL9K_RBENV_ALWAYS=true
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
@@ -32,13 +33,27 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 source /usr/local/opt/nvm/nvm.sh
 
 autoload -U add-zsh-hook
+############################################
+# NVM
+############################################
 load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use &> /dev/null
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    nvm use default &> /dev/null
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
   fi
 }
+
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
