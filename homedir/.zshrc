@@ -6,7 +6,7 @@ export ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir node_version vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history time)
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S %d/%m/%Y}"
+POWERLEVEL9K_TIME_FORMAT="%t %D{%d/%m/%Y}"
 POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'
 
 # Set to this to use case-sensitive completion
