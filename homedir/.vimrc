@@ -33,11 +33,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text Search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'mileszs/ack.vim'
 
 Plugin 'tpope/vim-sensible'
 Plugin 'justinmk/vim-sneak'
@@ -127,7 +133,7 @@ set fenc=utf-8
 set termencoding=utf-8
 set history=1000 " How many lines of history to remember
 set cf " enable error files and error jumping
-" set clipboard+=unnamed " turns out I do like sharing windows clipboard
+set clipboard+=unnamed " turns out I do like sharing windows clipboard
 set ffs=unix,dos,mac " support all three, in this order
 set viminfo+=! " make sure it can save viminfo
 set isk+=_,$,@,%,# " none of these should be word dividers, so make them not be
@@ -342,8 +348,8 @@ let g:syntastic_pug_checkers = ['jade','pug']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Easy Align
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-xmap ga <Plug> (EasyAlign)
-nmap ga <Plug> (EasyAlign)
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickly Edit/Reload Vim Config File
@@ -366,8 +372,7 @@ noremap <Leader>/ :FZF <cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <Leader>ag :Ag<space>
-
+nnoremap <Leader>ag :Ack!<Space>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Smooth Scrolling
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
