@@ -1,11 +1,20 @@
 call plug#begin('~/.vim/bundle')
 
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 " *************************
 " General Enhancements
 " *************************
 
 " Adds icons to stuff like NERDTREE, Airline, etc
-" Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'https://github.com/ryanoasis/vim-devicons'
 
 " Binary Search Tool
 " Plug 'https://github.com/dahu/bisectly', { 'on': 'Bisectly'}
@@ -19,6 +28,12 @@ Plug 'wokalski/autocomplete-flow'
 " Function argument completion for Deoplete
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+
+" Tmux line
+Plug 'edkolev/tmuxline.vim'
+
+" Tmux navigator
+Plug 'christoomey/vim-tmux-navigator'
 
 " Wakatime
 Plug 'git://github.com/wakatime/vim-wakatime.git'
@@ -76,6 +91,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
 
+" Window Swap
+Plug 'wesQ3/vim-windowswap'
+
+" Smooth scrolling
+Plug 'terryma/vim-smooth-scroll'
 
 " *************************
 " Themes
@@ -84,6 +104,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
 
+" Vim Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " *************************
 " Text-Related
@@ -130,7 +153,7 @@ Plug '1995eaton/vim-better-javascript-completion', { 'for': [ 'javascript', 'js'
 Plug 'gavocanov/vim-js-indent', { 'for': [ 'javascript', 'js', 'jsx' ]}
 
 " Toolkit - no syntax highlighting https://github.com/moll/vim-node
-Plug 'moll/vim-node', { 'for': [ 'javascript', 'js', 'jsx' ]} 
+Plug 'moll/vim-node', { 'for': [ 'javascript', 'js', 'jsx' ]}
 
 Plug 'chemzqm/vim-jsx-improve', { 'for': [ 'javascript', 'js', 'jsx' ]}
 
@@ -151,14 +174,7 @@ Plug 'tpope/vim-ragtag'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'skwp/vim-html-escape', {'for': ['html']}
 
-" Lua
-Plug 'https://github.com/xolox/vim-lua-ftplugin.git', {'for': ['lua']}
-Plug 'https://github.com/xolox/vim-misc.git', {'for': ['lua']}
-
-" Perl
-Plug 'https://github.com/c9s/perlomni.vim', {'for': ['pl', 'perl', 'p6', 'pm']}
-
-" ReasonML
-Plug 'reasonml/vim-reason-loader'
+" TypeScript
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
