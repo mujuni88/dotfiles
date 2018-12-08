@@ -19,8 +19,28 @@ filetype plugin indent on
 " let g:gruvbox_contrast_dark='hard'
 " let g:gruvbox_contrast_light='medium'
 " colorscheme gruvbox
+" **************************************************************
+" Theme
+" **************************************************************
 set background=dark
 colorscheme OceanicNext
+let g:airline_powerline_fonts = 1
+let g:airline_theme='onedark'
+let g:airline#extensions#tabline#enabled = 1
+let g:lightline = {
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ }
+      \ }
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 " **************************************************************
 " General
@@ -186,5 +206,17 @@ if (exists('+colorcolumn'))
     set colorcolumn=120
     highlight ColorColumn ctermbg=9
 endif
-" }}}
-"
+
+if has ('autocmd') " Remain compatible with earlier versions
+ augroup vimrc     " Source vim configuration upon save
+    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+  augroup END
+endif " has autocmd
+
+" Refresh changed content
+augroup refresh
+  autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
+  autocmd FileChangedShellPost *
+        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+augroup END
