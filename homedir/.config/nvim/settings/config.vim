@@ -207,16 +207,20 @@ if (exists('+colorcolumn'))
     highlight ColorColumn ctermbg=9
 endif
 
+
+" Reload Vim config {{{
 if has ('autocmd') " Remain compatible with earlier versions
  augroup vimrc     " Source vim configuration upon save
     autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
     autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
   augroup END
 endif " has autocmd
+" }}}
 
-" Refresh changed content
+" Refresh changed content {{{
 augroup refresh
   autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
   autocmd FileChangedShellPost *
         \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 augroup END
+" "}}}
