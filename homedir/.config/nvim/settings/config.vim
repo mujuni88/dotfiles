@@ -89,7 +89,7 @@ set shortmess=atI                                                        " short
 set report=0                                                             " tell us when anything is changed via :...
 set noerrorbells                                                         " don't make noise
 set list                                                                 " we do what to show tabs, to ensure we get them out of my files
-set listchars=tab:▸\ ,trail:▫,extends:>,precedes:<,nbsp:+,eol:⏎
+set listchars=tab:▸\ ,trail:▫,extends:>,precedes:<,nbsp:+,eol:¬
 set rnu                                                                  " relative numbering
 
 " **************************************************************
