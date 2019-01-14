@@ -2,7 +2,7 @@
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 export ZSH_THEME="powerlevel9k/powerlevel9k"
 
-export MYVIMRC=$HOME/.config/nvim/init.vim
+export MYVIMRC=$HOME/.config/nvim/settings/config.vim
 
 ## POWERLEVEL9K Settings ##
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2

@@ -6,9 +6,8 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :FZF<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 
 " in case you forgot to sudo
@@ -43,8 +42,9 @@ noremap <Leader>/ :FZF <cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <Leader>ack :Ack!<Space>
-nnoremap <leader>ag :Ag<space>
+nnoremap <leader>ag :Ag<Space>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Smooth Scrolling
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -90,7 +90,7 @@ nnoremap <silent> p p`]
 
 
 " neomake
-" nmap <Leader><Space>o :lopen<CR>      " open location window
-" nmap <Leader><Space>, :ll<CR>         " go to current error/warning
-" nmap <Leader><Space>n :lnext<CR>      " next error/warning
-" nmap <Leader><Space>p :lprev<CR>      " previous error/warning
+nmap <Leader><Space>o :lopen<CR>      " open location window
+nmap <Leader><Space>, :ll<CR>         " go to current error/warning
+nmap <Leader><Space>n :lnext<CR>      " next error/warning
+nmap <Leader><Space>p :lprev<CR>      " previous error/warning
