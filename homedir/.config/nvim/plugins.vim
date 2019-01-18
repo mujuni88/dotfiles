@@ -129,7 +129,7 @@ Plug 'vim-scripts/argtextobj.vim'
 
 " Find & replace, etc
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'junegunn/vim-fnr' | Plug 'junegunn/vim-pseudocl' " find & replace
 Plug 'vim-scripts/greplace.vim'
 Plug 'https://github.com/simnalamburt/vim-mundo'

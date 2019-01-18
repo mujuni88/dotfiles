@@ -42,9 +42,7 @@ noremap <Leader>/ :FZF <cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ackprg = 'ag --nogroup --nocolor --column'
-nnoremap <Leader>ack :Ack!<Space>
-nnoremap <leader>ag :Ag<Space>
+nnoremap <Leader>ag :Ack!<Space>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Smooth Scrolling
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
