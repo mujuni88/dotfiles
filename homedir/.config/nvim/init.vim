@@ -6,6 +6,10 @@ if filereadable(expand("~/.config/nvim/settings/config.vim"))
   source ~/.config/nvim/settings/config.vim
 endif
 
+if filereadable(expand("~/.config/nvim/settings/nerdtree.vim"))
+  source ~/.config/nvim/settings/nerdtree.vim
+endif
+
 if filereadable(expand("~/.config/nvim/settings/mappings.vim"))
   source ~/.config/nvim/settings/mappings.vim
 endif

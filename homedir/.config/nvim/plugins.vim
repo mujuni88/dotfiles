@@ -108,6 +108,9 @@ Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Nerd Syntax Highlight
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " *************************
 " Text-Related
 " *************************
