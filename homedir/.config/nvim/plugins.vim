@@ -177,4 +177,11 @@ Plug 'skwp/vim-html-escape', {'for': ['html']}
 " TypeScript
 Plug 'leafgarland/typescript-vim'
 
+" Coffee Script
+Plug 'kchmck/vim-coffee-script'
+
+" Gist
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+
 call plug#end()

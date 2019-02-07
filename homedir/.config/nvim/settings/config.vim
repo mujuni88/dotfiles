@@ -224,3 +224,8 @@ augroup refresh
         \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 augroup END
 " "}}}
+"
+" Gist {{{
+ let g:gist_clip_command = 'pbcopy'
+" "}}}
+

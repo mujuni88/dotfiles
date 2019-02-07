@@ -1,15 +1,15 @@
 let g:NERDSpaceDelims=1
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled=0
 
 " Auto open nerd tree on startup
-let g:nerdtree_tabs_open_on_gui_startup = 1
+let g:nerdtree_tabs_open_on_gui_startup=1
 " Focus in the main content window
-let g:nerdtree_tabs_focus_on_files = 1
+let g:nerdtree_tabs_focus_on_files=1
 
 " Make nerdtree look nice
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 30
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let g:NERDTreeWinSize=30
 
 " faster bookmarking in NERDTree
 autocmd Filetype nerdtree nnoremap <buffer> <leader>B :Bookmark<space>
@@ -17,8 +17,8 @@ autocmd Filetype nerdtree nnoremap <buffer> <leader>b :Bookmark<space><CR>
 
 " NERDTree {{{
 let NERDTreeIgnore = ['\.DS_Store$', '\.pyc$', '\.javac']
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeShowBookmarks=1
 
 " NERDTree's File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -42,6 +42,6 @@ call NERDTreeHighlightFile('py3', 'Magenta', 'none', '#ff00ff', '#151515')
 " }}}
 
 " nerdtree mappings
-let NERDTreeMapChangeRoot = 'u'
-let NERDTreeMapUpdir = 'U'
-let NERDTreeMapUpdirKeepOpen = 'c'
+let NERDTreeMapChangeRoot='u'
+let NERDTreeMapUpdir='U'
+let NERDTreeMapUpdirKeepOpen='c'
