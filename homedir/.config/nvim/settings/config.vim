@@ -162,10 +162,13 @@ if executable('ag')
   " set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+
 " force javascript syntax
 autocmd BufRead *.js set filetype=javascript
 autocmd BufRead *.es6 set filetype=javascript
 autocmd BufRead *.jsx set filetype=javascript
+
+"}}}
 
 " vim-commentary, adjust commentstring to support other libs
 autocmd FileType apache setlocal commentstring=#\ %s<Paste>

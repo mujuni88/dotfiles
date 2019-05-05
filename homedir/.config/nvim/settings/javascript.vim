@@ -1,7 +1,7 @@
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType javascript set formatprg=prettier\ --stdin
-" autocmd BufWritePre *.js :normal gggqG
-" autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
+autocmd FileType javascript set formatprg=prettier\ --stdin
+autocmd BufWritePre *.js :normal gggqG
+autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
 
 " enable syntax highlighting for .js files too instead of just .jsx
 let g:jsx_ext_required = 0
@@ -19,3 +19,15 @@ let g:ale_sign_column_always = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint']
+\}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\ }
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
+let g:ale_fix_on_save = 1
+
