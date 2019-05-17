@@ -17,17 +17,17 @@ let g:used_javascript_libs = 'underscore,react,flux,chai'
 
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
-\   'javascript': ['eslint'],
+\   'javascript': ['tslint', 'tsserver', 'eslint'],
 \}
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint']
+\   'javascript': ['prettier']
 \}
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\ }
 
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 
 let g:ale_fix_on_save = 1
 
+" ALE Mappings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)

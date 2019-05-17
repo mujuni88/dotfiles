@@ -22,6 +22,9 @@ Plug 'https://github.com/ryanoasis/vim-devicons'
 " Dark-powered Async completion (needs python3)
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" Mutiple cursors
+Plug 'terryma/vim-multiple-cursors'
+
 " Add flow to deoplete
 Plug 'wokalski/autocomplete-flow'
 
