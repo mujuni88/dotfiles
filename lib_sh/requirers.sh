@@ -67,12 +67,12 @@ function require_npm() {
     ok
 }
 
-function require_apm() {
-    running "checking atom plugin: $1"
-    apm list --installed --bare | grep $1@ > /dev/null
+function require_mas() {
+    running "mas install $1"
+    mas list | grep $1@ > /dev/null
     if [[ $? != 0 ]]; then
-        action "apm install $1"
-        apm install $1
+        action "mas install $1"
+        mas install $1
     fi
     ok
 }
@@ -81,7 +81,6 @@ function sourceNVM(){
     export NVM_DIR=~/.nvm
     source $(brew --prefix nvm)/nvm.sh
 }
-
 
 function require_nvm() {
     mkdir -p ~/.nvm
