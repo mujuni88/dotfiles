@@ -73,6 +73,9 @@ eval "$(rbenv init -)"
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# Netflix config
+source $HOME/.netflixrc
+
 ############################################
 # Export Paths
 ############################################

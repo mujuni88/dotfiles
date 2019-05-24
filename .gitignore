@@ -15,3 +15,4 @@ homedir/.vim/bundle/*
 !homedir/.vim/bundle/Vundle.vim
 homedir/.vim/vimundo
 homedir/.config/configstore
+homedir/.netfilxrc
