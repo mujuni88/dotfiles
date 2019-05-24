@@ -80,3 +80,5 @@ source $HOME/.netflixrc
 # Export Paths
 ############################################
 export PATH=$HOME/bin:$PATH
+
+[ -s "/Users/jbuza/.jabba/jabba.sh" ] && source "/Users/jbuza/.jabba/jabba.sh"
