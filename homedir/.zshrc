@@ -82,3 +82,8 @@ source $HOME/.netflixrc
 export PATH=$HOME/bin:$PATH
 
 [ -s "/Users/jbuza/.jabba/jabba.sh" ] && source "/Users/jbuza/.jabba/jabba.sh"
+
+############################################
+# Export NETFLIX ENVs
+############################################
+export NEWT_TEST_CONFIGS_TRACKING_REF=jetpack
