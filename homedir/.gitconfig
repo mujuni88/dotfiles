@@ -1,6 +1,6 @@
 [user]
   name = Joe Buza
-  email = joebm08@gmail.com
+  email = jbuza@netflix.com
 [color]
   ui = auto
 [color "branch"]
@@ -60,7 +60,7 @@
 [commit]
   template = ~/.git-commit-template.txt
 [core]
-  editor = vim
+  editor = nvim
 [fetch]
   prune = true
 [merge]
