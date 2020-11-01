@@ -45,6 +45,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " ***************************************************************
 Plugin 'mileszs/ack.vim'
 
+Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-sensible'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
@@ -446,3 +447,11 @@ set undodir=$HOME/.vim/undo/
 " Other
 " ***************************************************************
 let g:sneak#streak = 1
+
+" ***************************************************************
+" Webstorm
+" ***************************************************************
+set surround
+set highlightedyank
+set multiple-cursors
+set easymotion
