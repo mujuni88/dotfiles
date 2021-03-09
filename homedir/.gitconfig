@@ -51,6 +51,7 @@
   commadd= "!git add -A ; git commend"
   cleanup = !git-both-merged
   pullall = '!git pull && git submodule update --init --recursive'
+  rebasemaster= pull origin master -r
 
 [push]
   default = matching
