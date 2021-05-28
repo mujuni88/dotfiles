@@ -116,7 +116,7 @@ module.exports = {
     bell: 'SOUND',
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
-    copyOnSelect: false,
+    copyOnSelect: true,
 
     // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
     defaultSSHApp: true,
@@ -151,10 +151,9 @@ module.exports = {
     "hyperpower",
     "hypercwd",
     "hyper-pane",
-    "hyperterm-dibdabs",
     "hyperline",
-    "hyper-bloody",
-    "hyper-opacity"
+    "hyper-bloody",    
+    "hyper-opacity",
   ],
 
   // in development, you can create a directory under
