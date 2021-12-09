@@ -83,7 +83,7 @@ To launch fullscreen, hit `Command + Enter` in iTerm, then use `Command + d` and
 > You are responsible for everything this script does to your machine (see LICENSE)
 
 ```bash
-git clone --recurse-submodules https://github.com/atomantic/dotfiles ~/.dotfiles
+git clone --recurse-submodules git@github.com:mujuni88/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles;
 # run this using terminal (not iTerm, lest iTerm settings get discarded on exit)
 ./install.sh
