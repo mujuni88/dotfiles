@@ -1,3 +1,4 @@
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 if filereadable(expand("~/.config/nvim/plugins.vim"))
   source ~/.config/nvim/plugins.vim
 endif
@@ -21,4 +22,3 @@ endif
 if filereadable(expand("~/.config/nvim/settings/javascript.vim"))
   source ~/.config/nvim/settings/javascript.vim
 endif
-

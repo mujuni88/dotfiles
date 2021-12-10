@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
-export ZSH_THEME="powerlevel9k/powerlevel9k"
+export ZSH_THEME="robbyrussell"
 
 export MYVIMRC=$HOME/.config/nvim/settings/config.vim
 
@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source /usr/local/opt/nvm/nvm.sh
+source ~/.nvm/nvm.sh
 
 autoload -U add-zsh-hook
 ############################################
@@ -90,12 +90,9 @@ eval "$(rbenv init -)"
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# Netflix config
-source $HOME/.netflixrc
-
 ############################################
 # Export Paths
 ############################################
-export PATH=$HOME/.dotfiles/homedir/bin:$PATH
+export PATH=$HOME/.dotfiles/homedir/bin:/opt/homebrew/bin:$PATH
 
 [ -s "/Users/jbuza/.jabba/jabba.sh" ] && source "/Users/jbuza/.jabba/jabba.sh"
