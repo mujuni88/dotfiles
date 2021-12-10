@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
-export ZSH_THEME="robbyrussell"
+export ZSH_THEME="powerlevel9k/powerlevel9k"
 
 export MYVIMRC=$HOME/.config/nvim/settings/config.vim
 

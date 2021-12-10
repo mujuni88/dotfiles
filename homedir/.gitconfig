@@ -80,3 +80,5 @@
  enabled = true
 [submodule]
  recurse = true
+[pull]
+	rebase = true
