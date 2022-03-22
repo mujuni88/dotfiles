@@ -1,1 +1,1 @@
-inoremap jj <Esc>
+source ~/.vimrc

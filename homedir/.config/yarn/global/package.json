@@ -4,6 +4,7 @@
     "create-react-app": "3.4.1",
     "lerna": "3.20.2",
     "serve": "^11.3.2",
+    "truffle": "5.4.30",
     "typescript": "3.9.3"
   }
 }
