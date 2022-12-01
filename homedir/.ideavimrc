@@ -1,1 +1,19 @@
 source ~/.vimrc
+set ignorecase
+set smartcase
+set scrolloff=5         " 5 lines above/below cursor when scrolling
+set incsearch
+set relativenumber
+set number
+let mapleader = ","
+set clipboard+=unnamed
+" key bindings for quickly moving between windows
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>g :action GotoDeclaration<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>s :action GotoSymbol<cr>
+nmap <leader>a :action GotoAction<cr>
+nmap <leader>r :action RecentFiles<cr>
+nmap <leader>t :action GotoRelated<cr>

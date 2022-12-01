@@ -43,6 +43,7 @@ plugins=(
   web-search
   per-directory-history
   zsh-syntax-highlighting
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh

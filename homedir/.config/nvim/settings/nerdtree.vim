@@ -1,5 +1,5 @@
 let g:NERDSpaceDelims=1
-let g:gitgutter_enabled=0
+let g:gitgutter_enabled=1
 
 " Auto open nerd tree on startup
 let g:nerdtree_tabs_open_on_gui_startup=1
