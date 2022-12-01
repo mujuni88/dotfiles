@@ -16,3 +16,4 @@ homedir/.vim/vimundo
 homedir/.config/configstore
 homedir/.netfilxrc
 homedir/.config/gh/*
+homedir/.config/github-copilot/hosts.json
