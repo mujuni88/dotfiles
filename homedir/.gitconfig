@@ -37,8 +37,8 @@
   staaash = stash --all
   shorty = status --short --
   merc = merge --no-ff
-  br-ac = branch --sort=committerdate
-  br-desc = branch --sort=-committerdate
+  br-old = branch --sort=committerdate
+  br-new = branch --sort=-committerdate
   stash-untracked = "!f() {    \
     git stash;               \
     git stash -u;            \
