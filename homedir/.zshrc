@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 export ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -94,7 +96,7 @@ eval "$(rbenv init -)"
 ############################################
 # Export Paths
 ############################################
-export PATH=$HOME/.dotfiles/homedir/bin:/opt/homebrew/bin:$(yarn global bin):$PATH
+export PATH=$HOME/.dotfiles/homedir/bin:/opt/homebrew/bin:$(yarn global bin):/opt/homebrew/opt/mysql-client/bin:$PATH
 
 [ -s "/Users/jbuza/.jabba/jabba.sh" ] && source "/Users/jbuza/.jabba/jabba.sh"
 
@@ -106,3 +108,6 @@ REACT_EDITOR="/usr/local/bin/webstorm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
