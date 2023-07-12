@@ -103,7 +103,7 @@ export PATH=$HOME/.dotfiles/homedir/bin:/opt/homebrew/bin:$(yarn global bin):/op
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-REACT_EDITOR="/usr/local/bin/webstorm"
+REACT_EDITOR="/usr/local/bin/code-insiders"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
