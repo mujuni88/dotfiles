@@ -13,7 +13,7 @@ module.exports = {
 
     // font family with optional fallbacks
     fontFamily:
-      '"Iosevka Extended", "Hack Nerd Font Mono", "MesloLGLDZ Nerd Font Mono", "Fira Code", Consolas, "Lucida Console", monospace',
+      '"Geist Mono Regular", "Iosevka Extended", "Hack Nerd Font Mono", "MesloLGLDZ Nerd Font Mono", "Fira Code", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
