@@ -6,6 +6,7 @@ export ZSH_THEME="powerlevel9k/powerlevel9k"
 
 export MYVIMRC=$HOME/.config/nvim/settings/config.vim
 
+
 ## POWERLEVEL9K Settings ##
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv node_version vcs)
@@ -118,3 +119,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+PATH=~/.console-ninja/.bin:$PATH
+
+# Postgres
+export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@16/lib/pkgconfig"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
