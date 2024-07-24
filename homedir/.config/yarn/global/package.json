@@ -5,6 +5,8 @@
     "lerna": "3.20.2",
     "serve": "^11.3.2",
     "truffle": "5.4.30",
-    "typescript": "3.9.3"
+    "turbo": "2.0.9",
+    "typescript": "3.9.3",
+    "yarn": "1.22.22"
   }
 }
