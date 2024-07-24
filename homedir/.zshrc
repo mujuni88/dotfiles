@@ -128,5 +128,3 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
-export GH_HOST=stable.netflix.net
