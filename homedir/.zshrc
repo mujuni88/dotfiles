@@ -128,3 +128,10 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+# fnm
+FNM_PATH="/Users/jbuza/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/jbuza/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi

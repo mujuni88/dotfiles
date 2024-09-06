@@ -67,20 +67,14 @@
   smudge = git-media-smudge %f
 [commit]
   template = ~/.git-commit-template.txt
-[core]
-  editor = nvim
 [fetch]
   prune = true
-[merge]
-  tool = vimdiff
 [mergetool]
   prompt = true
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [difftool]
   prompt = false
-[diff]
-  tool = vimdiff
 [github]
  user = mujuni88
 [rerere]
@@ -93,3 +87,20 @@
 	updateRefs = true
 [init]
 	defaultBranch = main
+[core]
+  editor = nvim
+  pager = delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
+
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+  features = catppuccin-mocha
+  navigate = true    # use n and N to move between diff sections
+  line-numbers = true
+  side-by-side = true
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[diff]
+  tool = vimdiff
+  colorMoved = default
