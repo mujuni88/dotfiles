@@ -184,6 +184,8 @@ module.exports = {
     // productivity
     //""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     'notion',
+    'raycast',
+    'ChatGPT',
   ],
   //""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   // Mac App Store command line interface
