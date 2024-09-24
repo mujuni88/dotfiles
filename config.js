@@ -124,6 +124,7 @@ module.exports = {
     'visual-studio-code',
     'sublime-text',
     'wezterm',
+    'amazon-q',
 
     //""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     // grammar checker
