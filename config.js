@@ -72,6 +72,8 @@ module.exports = {
     'ttyrec',
     'bat',
     'thefuck',
+    'zsh-autosuggestions',
+    'zsh-syntax-highlighting',
 
     //""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     // better, more recent vim
