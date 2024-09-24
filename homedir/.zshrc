@@ -1,19 +1,18 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
-export ZSH_THEME="powerlevel9k/powerlevel9k"
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export MYVIMRC=$HOME/.config/nvim/settings/config.vim
 
-
-## POWERLEVEL9K Settings ##
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv node_version vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history battery time)
-POWERLEVEL9K_TIME_FORMAT="%t %D{%d/%m/%Y}"
-POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'
-POWERLEVEL9K_RBENV_ALWAYS=true
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
@@ -135,3 +134,6 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/Users/jbuza/Library/Application Support/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
