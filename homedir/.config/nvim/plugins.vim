@@ -14,7 +14,7 @@ call plug#begin('~/.vim/bundle')
 " *************************
 
 " Adds icons to stuff like NERDTREE, Airline, etc
-Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " Binary Search Tool
 " Plug 'https://github.com/dahu/bisectly', { 'on': 'Bisectly'}
@@ -37,9 +37,6 @@ Plug 'edkolev/tmuxline.vim'
 
 " Tmux navigator
 Plug 'christoomey/vim-tmux-navigator'
-
-" Wakatime
-Plug 'git://github.com/wakatime/vim-wakatime.git'
 
 " Bottom bar with all settings
 Plug 'itchyny/lightline.vim'
