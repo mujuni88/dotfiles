@@ -8,6 +8,7 @@ module.exports = {
     'ag',
     'fzf',
     'tlrc',
+    'atuin',
 
     //""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     // Install GNU core utilities (those that come with macOS are outdated)

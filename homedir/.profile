@@ -16,3 +16,5 @@ source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/profile.post.bash"
+
+. "$HOME/.atuin/bin/env"
