@@ -11,8 +11,11 @@ fi
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 export ZSH_THEME="powerlevel10k/powerlevel10k"
-
-export MYVIMRC=$HOME/.config/nvim/settings/config.vim
+export MY_CONFIG="$HOME/.dotfiles/homedir/.config"
+export MYNIX_CONFIG="$MY_CONFIG/nix-darwin"
+export MYATUIN_CONFIG="$MY_CONFIG/atuin"
+export MYVIM_CONFIG="$MY_CONFIG/nvim/settings/config.vim"
+export MYWEZTERM_CONFIG="$MY_CONFIG/wezterm"
 
 
 # Set to this to use case-sensitive completion
