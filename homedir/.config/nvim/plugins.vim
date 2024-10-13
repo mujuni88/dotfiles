@@ -187,4 +187,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()

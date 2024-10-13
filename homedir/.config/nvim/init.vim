@@ -22,3 +22,7 @@ endif
 if filereadable(expand("~/.config/nvim/settings/javascript.vim"))
   source ~/.config/nvim/settings/javascript.vim
 endif
+
+if filereadable(expand("~/.config/nvim/settings/lsp_config.lua"))
+  source ~/.config/nvim/settings/lsp_config.lua
+endif
