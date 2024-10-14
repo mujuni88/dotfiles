@@ -26,7 +26,6 @@
           pkgs.wezterm
           pkgs.neovim
           pkgs.tmux
-          pkgs.ledger-live-desktop
           pkgs.vscode
           pkgs.starship
           pkgs.mkalias
@@ -50,6 +49,8 @@
           pkgs.iina
           pkgs.unar
           pkgs.fnm
+          pkgs.cargo
+          pkgs.rustc
         ];
 
       homebrew = {
@@ -63,6 +64,7 @@
           "nordvpn"
           "notion"
           "ChatGPT"
+          "ledger-live"
         ];
         masApps = {
           "Yoink" = 457622435;
