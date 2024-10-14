@@ -6,6 +6,7 @@ require("events")
 local themes = {
 	nord = "Nord (Gogh)",
 	onedark = "One Dark (Gogh)",
+	everforest = "Everforest Dark (Gogh)"
 }
 local success, stdout, stderr = wezterm.run_child_process({ os.getenv("SHELL"), "-c", "printenv WEZTERM_THEME" })
 local selected_theme = stdout:gsub("%s+", "") -- Remove all whitespace characters including newline

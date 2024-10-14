@@ -7,15 +7,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Q pre block. Keep at the top of this file.
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 export MY_CONFIG="$HOME/.dotfiles/homedir/.config"
 export MYNIX_CONFIG="$MY_CONFIG/nix-darwin"
 export MYATUIN_CONFIG="$MY_CONFIG/atuin"
-export MYVIM_CONFIG="$MY_CONFIG/nvim/settings/config.vim"
-export MYWEZTERM_CONFIG="$MY_CONFIG/wezterm"
+export MYVIM_CONFIG="$MY_CONFIG/nvim"
+export MYWEZ_CONFIG="$MY_CONFIG/wezterm"
+export STARSHIP_CONFIG="$MY_CONFIG/starship/starship.toml"
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
+
 
 
 # Set to this to use case-sensitive completion
@@ -202,8 +204,9 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 . "$HOME/.atuin/bin/env"
-
 eval "$(atuin init zsh --disable-up-arrow)"
+
+eval "$(starship init zsh)"
 
 . "$HOME/.cargo/env"
 

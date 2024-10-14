@@ -103,6 +103,8 @@ Plug 'terryma/vim-smooth-scroll'
 
 Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
+Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
+Plug 'sainnhe/everforest'
 
 " Vim Airline
 Plug 'vim-airline/vim-airline'

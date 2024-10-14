@@ -11,7 +11,7 @@ config = {
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = false,
   font_size = 14,
-  font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
+  font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Bold" }),
   enable_tab_bar = false,
   window_padding = {
     left = 3,
@@ -22,12 +22,12 @@ config = {
   background = {
     {
       source = {
-        File = "/Users/" .. os.getenv("USER") .. "/.config/wezterm/desktop/martian.jpg",
+        File = "/Users/" .. os.getenv("USER") .. "/.config/wezterm/desktop/mountain.jpg",
       },
       hsb = {
         hue = 1.0,
         saturation = 1.02,
-        brightness = 0.25,
+        brightness = 0.15,
       },
       -- attachment = { Parallax = 0.3 },
       -- width = "100%",
