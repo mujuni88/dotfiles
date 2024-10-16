@@ -41,7 +41,7 @@
       # Homebrew configuration
       homebrew = homebrewConfig;
 
-      # System configurations (imported from system.nix)
+      # System configurations
       system = systemConfig;
 
       # Font packages
@@ -54,9 +54,7 @@
       security.pam.enableSudoTouchIdAuth = true;
 
       # Nix flakes settings
-      nix = {
-        settings.experimental-features = "nix-command flakes";
-      };
+      nix.settings.experimental-features = "nix-command flakes";
 
       # Zsh as the default shell
       programs.zsh.enable = true;
@@ -70,8 +68,7 @@
     darwinConfigurations."${myMac}" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
-        nix-homebrew.darwinModules.nix-homebrew
-        {
+        nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
             enable = true;
             enableRosetta = false;  # Apple Silicon: Enable Intel prefix for Rosetta
@@ -79,10 +76,15 @@
             autoMigrate = true;
           };
         }
-      ];
-    };
+        home-manager.darwinModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."${user}" = import ./home.nix;
+          }
+        ];
+      };
 
-    # Expose the package set, including overlays
-    darwinPackages = self.darwinConfigurations."${myMac}".pkgs;
+      # Expose the package set, including overlays
+      darwinPackages = self.darwinConfigurations."${myMac}".pkgs;
   };
 }
