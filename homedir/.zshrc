@@ -50,7 +50,6 @@ plugins=(
   yarn
   web-search
   per-directory-history
-  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -199,10 +198,9 @@ _fzf_comprun() {
   esac
 }
 
-# eval $(thefuck --alias fk)
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -7,6 +7,8 @@
 
   brews = [
     "mas"
+    "zsh-syntax-highlighting"
+    "zsh-autocomplete"
   ];
 
   casks = [
