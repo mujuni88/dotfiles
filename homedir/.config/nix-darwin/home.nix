@@ -1,0 +1,1 @@
+/Users/jbuza/.dotfiles/homedir/.config/home-manager/home.nix
