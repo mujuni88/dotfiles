@@ -143,7 +143,7 @@ enter_accept = true
 ## keybinding is defined.  If this is set to "emacs", "vim-insert", or
 ## "vim-normal", the startup keymap mode in the Atuin search is forced to be
 ## the specified one.
-keymap_mode = "vim-normal"
+keymap_mode = "auto"
 
 ## Cursor style in each keymap mode.  If specified, the cursor style is changed
 ## in entering the cursor shape.  Available values are "default" and
@@ -189,12 +189,12 @@ keymap_mode = "vim-normal"
 
 ## Set commands that will be completely ignored from stats
 ignored_commands = [
-  "cd",
-  "ls",
-  "vi",
-  'vim',
-  'nvim',
-  'j',
+  # "cd",
+  # "ls",
+  # "vi",
+  # 'vim',
+  # 'nvim',
+  # 'j',
 ]
 
 [keys]

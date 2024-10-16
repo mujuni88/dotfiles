@@ -1,5 +1,3 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -15,15 +13,18 @@ export MYNIX_CONFIG="$MY_CONFIG/nix-darwin"
 export MYATUIN_CONFIG="$MY_CONFIG/atuin"
 export MYVIM_CONFIG="$MY_CONFIG/nvim"
 export MYWEZ_CONFIG="$MY_CONFIG/wezterm"
+export MYHM_CONFIG="$MY_CONFIG/home-manager"
+
 export STARSHIP_CONFIG="$MY_CONFIG/starship/starship.toml"
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
 
+export ZVM_VI_ESCAPE_BINDKEY="jj"
 
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
 
-# disable weekly auto-update checks
+# disable weekly auto-update check
 # export DISABLE_AUTO_UPDATE="true"
 
 # disable colors in ls
@@ -49,9 +50,7 @@ plugins=(
   yarn
   web-search
   per-directory-history
-  zsh-syntax-highlighting
-  vi-mode
-  # zsh-autosuggestions
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -164,14 +163,18 @@ _fzf_compgen_dir() {
 source ~/fzf-git.sh/fzf-git.sh
 
 # --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--color=selected-bg:#494d64 \
+--multi"
 
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
 
 # ----- Bat (better cat) -----
 export BAT_THEME=tokyonight_night
@@ -197,18 +200,13 @@ _fzf_comprun() {
 }
 
 # eval $(thefuck --alias fk)
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh --disable-up-arrow)"
-
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 . "$HOME/.cargo/env"
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

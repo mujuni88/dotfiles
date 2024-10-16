@@ -162,6 +162,10 @@ if executable('ag')
   " set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 " force javascript syntax
 autocmd BufRead *.js set filetype=javascript

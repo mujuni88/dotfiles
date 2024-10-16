@@ -20,26 +20,26 @@ config = {
     bottom = 0,
   },
   background = {
-    {
-      source = {
-        File = "/Users/" .. os.getenv("USER") .. "/.config/wezterm/desktop/mountain.jpg",
-      },
-      hsb = {
-        hue = 1.0,
-        saturation = 1.02,
-        brightness = 0.15,
-      },
-      -- attachment = { Parallax = 0.3 },
-      -- width = "100%",
-      -- height = "100%",
-    },
+    -- {
+    --   source = {
+    --     File = "/Users/" .. os.getenv("USER") .. "/.config/wezterm/desktop/martian.jpg",
+    --   },
+    --   hsb = {
+    --     hue = 1.0,
+    --     saturation = 1.02,
+    --     brightness = 0.15,
+    --   },
+    --   -- attachment = { Parallax = 0.3 },
+    --   -- width = "100%",
+    --   -- height = "100%",
+    -- },
     {
       source = {
         Color = "#282c35",
       },
       width = "100%",
       height = "100%",
-      opacity = 0.55,
+      opacity = 0.85,
     },
   },
   -- from: https://akos.ma/blog/adopting-wezterm/
