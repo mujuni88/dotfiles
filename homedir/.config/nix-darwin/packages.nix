@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs }:
 
 with pkgs; [
   # Terminal and Shell Tools

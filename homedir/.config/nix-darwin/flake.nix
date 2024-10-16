@@ -32,8 +32,8 @@
     let
       # Import system packages and homebrew configurations
       packages = import ./packages.nix { inherit pkgs; };
-      systemConfig = import ./system.nix;
-      homebrewConfig = import ./homebrew.nix;
+      systemConfig = import ./system.nix {inherit self; };
+      homebrewConfig = import ./homebrew.nix {};
     in {
       nixpkgs.config.allowUnfree = true;
       environment.systemPackages = packages;
