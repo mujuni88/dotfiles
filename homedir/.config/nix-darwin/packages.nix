@@ -1,5 +1,4 @@
-{ pkgs }:
-
+{pkgs}:
 with pkgs; [
   # Terminal and Shell Tools
   tmux
@@ -9,9 +8,6 @@ with pkgs; [
   atuin
   gnused
   bat
-  zsh-autosuggestions
-  zsh-autocomplete
-  zsh-syntax-highlighting
 
   # Code Editors and IDEs
   neovim
@@ -31,4 +27,7 @@ with pkgs; [
 
   # Utility Applications
   unar
+
+  # Code formatter for Nix
+  alejandra
 ]

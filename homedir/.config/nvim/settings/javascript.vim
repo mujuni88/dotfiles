@@ -26,6 +26,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier_eslint'],
 \   'css': ['prettier'],
+\   'nix': ['alejandra']
 \}
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'

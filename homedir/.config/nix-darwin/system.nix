@@ -1,6 +1,4 @@
-{ self }:
-
-{
+{self}: {
   defaults = {
     # Dock settings
     dock = {
@@ -39,7 +37,7 @@
     # Global macOS settings (NSGlobalDomain)
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";
-      KeyRepeat = 2;
+      KeyRepeat = 3;
     };
   };
 

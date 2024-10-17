@@ -1,9 +1,18 @@
-{}:
-
 {
+  # Enable Homebrew support in the Nix configuration
   enable = true;
+
+  # Automatically update Homebrew formulas on activation (when Nix configuration is applied)
   onActivation.autoUpdate = true;
+
+  # Upgrade installed packages to their latest versions on activation
   onActivation.upgrade = true;
+
+  # Disable macOS quarantine for apps installed via Homebrew casks (avoids "App can't be opened" warnings)
+  caskArgs.no_quarantine = true;
+
+  # Use a global Brewfile to manage Homebrew dependencies across the system
+  global.brewfile = true;
 
   brews = [
     "mas"

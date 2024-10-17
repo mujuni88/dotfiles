@@ -22,18 +22,28 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, home-manager }:
-  let
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    nixpkgs,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
+    home-manager,
+  }: let
     # Define variables for reuse
     user = "jbuza";
     myMac = "Joes-MacBook-Pro";
 
-    configuration = { pkgs, config, ... }:
-    let
+    configuration = {
+      pkgs,
+      config,
+      ...
+    }: let
       # Import system packages and homebrew configurations
-      packages = import ./packages.nix { inherit pkgs; };
-      systemConfig = import ./system.nix {inherit self; };
-      homebrewConfig = import ./homebrew.nix {};
+      packages = import ./packages.nix {inherit pkgs;};
+      systemConfig = import ./system.nix {inherit self;};
+      homebrewConfig = import ./homebrew.nix;
     in {
       nixpkgs.config.allowUnfree = true;
       environment.systemPackages = packages;
@@ -46,7 +56,7 @@
 
       # Font packages
       fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
       ];
 
       # Auto-upgrade Nix package and daemon service
@@ -61,30 +71,38 @@
 
       # Platform configuration for Apple Silicon
       nixpkgs.hostPlatform = "aarch64-darwin";
-    };
 
+      # Set user's home directory. Default is /var/empty
+      users = {
+        users."${user}".home = "/Users/" + user;
+      };
+    };
   in {
     # Use `myMac` variable to set the system configuration name
     darwinConfigurations."${myMac}" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
-        nix-homebrew.darwinModules.nix-homebrew {
+        nix-homebrew.darwinModules.nix-homebrew
+        {
           nix-homebrew = {
             enable = true;
-            enableRosetta = false;  # Apple Silicon: Enable Intel prefix for Rosetta
-            user = user;            # Use `user` variable for Homebrew user
+            enableRosetta = false; # Apple Silicon: Enable Intel prefix for Rosetta
+            user = user; # Use `user` variable for Homebrew user
             autoMigrate = true;
           };
         }
-        home-manager.darwinModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users."${user}" = import ./home.nix;
-          }
-        ];
-      };
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users."${user}" = import ./home.nix;
+          };
+        }
+      ];
+    };
 
-      # Expose the package set, including overlays
-      darwinPackages = self.darwinConfigurations."${myMac}".pkgs;
+    # Expose the package set, including overlays
+    darwinPackages = self.darwinConfigurations."${myMac}".pkgs;
   };
 }

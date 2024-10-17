@@ -1,13 +1,39 @@
-{ config, pkgs, ... }:
-
-let
-  user = "jbuza";
-in
 {
+  config,
+  pkgs,
+  ...
+}: {
+  # users.jbuza.imports = [
+  #   ({pkgs, ...}: {
+  #     home = {
+  #       sessionVariables = {
+  #         EDITOR = "vim";
+  #       };
+  #       username = user;
+  #       homeDirectory = "/Users/" + user;
+  #       stateVersion = "24.05";
+  #     };
+  #     programs = {
+  #       home-manager = {
+  #         enable = true;
+  #       };
+  #       # tmux = {};
+  #       # starship = {};
+  #       # zoxide = {};
+  #       # fzf = {};
+  #       # atuin = {};
+  #       # gnused = {};
+  #       bat = {
+  #         enable = true;
+  #         config.theme = "tokyonight_night";
+  #       };
+  #     };
+  #   })
+  # ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = user;
-  home.homeDirectory = "/Users/"+user;
+  home.username = "jbuza";
+  home.homeDirectory = "/Users/jbuza";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -71,7 +97,7 @@ in
   #  /etc/profiles/per-user/jbuza/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.

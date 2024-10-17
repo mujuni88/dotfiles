@@ -24,12 +24,12 @@ nmap ga <Plug>(EasyAlign)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickly Edit/Reload Vim Config File
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <Leader>ev :e $MYVIMRC<CR>
-nnoremap <Leader>sv :so $MYVIMRC<CR>
+nnoremap <Leader>ev :e $MYVIM_CONFIG/settings/config.vim<CR>
+nnoremap <Leader>sv :so $MYVIM_CONFIG<CR>
 
 if has ('autocmd') " Remain compatible with earlier versions
  augroup vimrc     " Source vim configuration upon save
-    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYVIM_CONFIG source % | echom "Reloaded " . $MYVIM_CONFIG | redraw
     autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
   augroup END
 endif " has autocmd
