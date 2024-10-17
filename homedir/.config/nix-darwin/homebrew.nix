@@ -43,6 +43,7 @@
     "notion"
     "raycast"
     "chatgpt"
+    "amethyst"
 
     # Media and Entertainment
     "spotify"

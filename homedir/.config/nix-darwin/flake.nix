@@ -96,7 +96,16 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users."${user}" = import ./home.nix;
+            users."${user}" = {
+              config,
+              pkgs,
+              ...
+            } @ args:
+              import ./home.nix {
+                inherit user;
+                config = config;
+                pkgs = pkgs;
+              };
           };
         }
       ];
