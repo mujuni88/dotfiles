@@ -3,7 +3,11 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  dotFilesDir = "~/.dotfiles";
+  dotHomeDir = "${dotFilesDir}/homedir";
+  getHomeDirFile = fileName: "${dotHomeDir}/${fileName}";
+in {
   home = {
     username = user;
 
@@ -15,6 +19,7 @@
     ];
 
     file = {
+      ".zshrc".source = getHomeDirFile ".zshrc";
     };
 
     sessionVariables = {
@@ -28,11 +33,9 @@
     };
     bat = {
       enable = true;
-      config.them = "tokyonight_night";
     };
     fzf = {
       enable = true;
-      enableZshIntegration = true;
     };
     eza = {
       enable = true;
@@ -42,12 +45,9 @@
     };
     zsh = {
       enable = true;
-      syntaxHighlighting.enable = true;
-      autosuggestion.enable = true;
     };
     wezterm = {
       enable = true;
-      enableZshIntegration = true;
     };
   };
 }

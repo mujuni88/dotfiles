@@ -76,6 +76,9 @@
       users = {
         users."${user}".home = "/Users/" + user;
       };
+
+      # home manager backups
+      home-manager.backupFileExtension = "backup";
     };
   in {
     # Use `myMac` variable to set the system configuration name
