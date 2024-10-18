@@ -4,20 +4,50 @@
   pkgs,
   ...
 }: {
-  home.username = user;
-  home.homeDirectory = "/Users/" + user;
+  home = {
+    username = user;
 
-  home.stateVersion = "24.05";
+    homeDirectory = "/Users/" + user;
 
-  home.packages = [
-  ];
+    stateVersion = "24.05";
 
-  home.file = {
+    packages = [
+    ];
+
+    file = {
+    };
+
+    sessionVariables = {
+      EDITOR = "vim";
+    };
   };
 
-  home.sessionVariables = {
-    EDITOR = "vim";
+  programs = {
+    home-manager = {
+      enable = true;
+    };
+    bat = {
+      enable = true;
+      config.them = "tokyonight_night";
+    };
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    eza = {
+      enable = true;
+    };
+    git = {
+      enable = true;
+    };
+    zsh = {
+      enable = true;
+      syntaxHighlighting.enable = true;
+      autosuggestion.enable = true;
+    };
+    wezterm = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
-
-  programs.home-manager.enable = true;
 }
