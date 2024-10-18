@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  dotFilesDir = "~/.dotfiles";
+  dotFilesDir = "./.dotfiles";
   dotHomeDir = "${dotFilesDir}/homedir";
   getHomeDirFile = fileName: "${dotHomeDir}/${fileName}";
 in {
