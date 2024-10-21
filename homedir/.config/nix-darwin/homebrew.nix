@@ -33,6 +33,7 @@
     "arc"
     "google-chrome"
     "firefox"
+    "brave-browser"
 
     # Communication Apps
     "slack"

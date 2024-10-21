@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-git branch --merged | grep -v '\*\|master\|staging' | xargs -I_br -- sh -c 'git branch -d _br; git push origin --delete
-_br'
-
