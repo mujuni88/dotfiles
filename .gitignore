@@ -12,7 +12,7 @@ homedir/.vim/temp/*
 homedir/.vim/.netrwhist
 homedir/.vim/bundle/*
 !homedir/.vim/bundle/.gitignore
-homedir/.vim/vimundo
+homedir/.vim/undo
 homedir/.config/configstore
 homedir/.netfilxrc
 homedir/.config/gh/*
